@@ -1,0 +1,18 @@
+# Translation for the Limit Visibility To Own plugin for Omeka.
+# Copyright (C) 2019 Daniele Binaghi
+# This file is distributed under the same license as the Omeka package.
+# Daniele Binaghi <admin@bitoteko.it>, 2019
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Limit Visibility To Own\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-24-12 18:54+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
