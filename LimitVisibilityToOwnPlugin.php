@@ -45,20 +45,22 @@ class LimitVisibilityToOwnPlugin extends Omeka_Plugin_AbstractPlugin
 	}
 
 	public function filterItemsBrowseParams($params)
-    {
-        $user = current_user();
-		if ($user && in_array($user->role, unserialize(get_option('limit_visibility_to_own_items_roles')))) {
+	{
+		$user = current_user();
+		$limitedRoles = unserialize(get_option('limit_visibility_to_own_items_roles'));
+		if ($user && count($limitedRoles) > 0 && in_array($user->role, $limitedRoles)) {
 			$params['user'] = $user->id;
 		}
-        return $params;
-    }
+		return $params;
+	}
 
 	public function filterCollectionsBrowseParams($params)
-    {
-        $user = current_user();
-		if ($user && in_array($user->role, unserialize(get_option('limit_visibility_to_own_collections_roles')))) {
+	{
+		$user = current_user();
+		$limitedRoles = unserialize(get_option('limit_visibility_to_own_collections_roles'));
+		if ($user && count($limitedRoles) > 0 && in_array($user->role, $limitedRoles)) {
 			$params['user'] = $user->id;
 		}
-        return $params;
-    }
+		return $params;
+	}
 }
