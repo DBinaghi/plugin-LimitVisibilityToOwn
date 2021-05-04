@@ -46,6 +46,8 @@ class LimitVisibilityToOwnPlugin extends Omeka_Plugin_AbstractPlugin
 
 	public function filterItemsBrowseParams($params)
 	{
+		if (!is_admin_theme()) return $params;
+		
 		$user = current_user();
 		$limitedRoles = unserialize(get_option('limit_visibility_to_own_items_roles'));
 		if ($user && count($limitedRoles) > 0 && in_array($user->role, $limitedRoles)) {
@@ -56,6 +58,8 @@ class LimitVisibilityToOwnPlugin extends Omeka_Plugin_AbstractPlugin
 
 	public function filterCollectionsBrowseParams($params)
 	{
+		if (!is_admin_theme()) return $params;
+		
 		$user = current_user();
 		$limitedRoles = unserialize(get_option('limit_visibility_to_own_collections_roles'));
 		if ($user && count($limitedRoles) > 0 && in_array($user->role, $limitedRoles)) {
