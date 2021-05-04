@@ -2,10 +2,10 @@
 
 ## Description
 
-This Omeka Classic plugin allows to limit the visibility of Items and/or Collections
+This Omeka Classic plugin allows to limit, while in Admin mode, the visibility of Items and/or Collections
 to just the ones the user have contributed. Visibility rights are allocated by user role.
 
-Please note: this plugin does not restrict access to Items or Collections, so anybody using a direct URL or a specific plugin (as Collection Tree, for instance) will still be able to display the targeted Item or Collection
+Please note: this plugin does not restrict access to Items or Collections, so anybody using a direct URL or a specific plugin (as Collection Tree, for instance) will still be able to display the targeted Item or Collection.
 
 ## Installation
 Uncompress files and rename plugin folder "LimitVisibilityToOwn".
