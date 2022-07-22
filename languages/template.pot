@@ -17,21 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: config_form.php:4
+#: config_form.php:5
 msgid "Limit to own Items"
 msgstr ""
 
-#: config_form.php:7
+#: config_form.php:8
 msgid ""
 "Check the roles that will be able to see only their own Items (in Admin mode). "
 "<br>N.B.: by default, Super User's role is not available for limitation."
 msgstr ""
 
-#: config_form.php:30
+#: config_form.php:36
 msgid "Limit to own Collections"
 msgstr ""
 
-#: config_form.php:33
+#: config_form.php:39
 msgid ""
 "Check the roles that will be able to see only their own Collections (in Admin mode). "
 "<br>N.B.: by default, Super User's role is not available for limitation."
