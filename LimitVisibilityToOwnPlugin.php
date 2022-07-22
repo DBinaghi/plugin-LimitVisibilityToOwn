@@ -17,8 +17,8 @@ class LimitVisibilityToOwnPlugin extends Omeka_Plugin_AbstractPlugin
 
 	public function hookInstall()
 	{
-		set_option('limit_visibility_to_own_items_roles', '0');
-		set_option('limit_visibility_to_own_collections_roles', '0');
+		set_option('limit_visibility_to_own_items_roles', '');
+		set_option('limit_visibility_to_own_collections_roles', '');
 	}
 
 	public function hookUninstall()
@@ -35,8 +35,8 @@ class LimitVisibilityToOwnPlugin extends Omeka_Plugin_AbstractPlugin
 	public function hookConfig($args)
 	{
 		$post = $args['post'];
-		set_option('limit_visibility_to_own_items_roles',		serialize($post['limit_visibility_to_own_items_roles']));
-		set_option('limit_visibility_to_own_collections_roles',	serialize($post['limit_visibility_to_own_collections_roles']));
+		set_option('limit_visibility_to_own_items_roles',		(isset($post['limit_visibility_to_own_items_roles']) ? serialize($post['limit_visibility_to_own_items_roles']) : ''));
+		set_option('limit_visibility_to_own_collections_roles',	(isset($post['limit_visibility_to_own_items_roles']) ? serialize($post['limit_visibility_to_own_collections_roles']) : ''));
 	}
 	
 	public function hookConfigForm()
@@ -49,9 +49,11 @@ class LimitVisibilityToOwnPlugin extends Omeka_Plugin_AbstractPlugin
 		if (!is_admin_theme()) return $params;
 		
 		$user = current_user();
-		$limitedRoles = unserialize(get_option('limit_visibility_to_own_items_roles'));
-		if ($user && count($limitedRoles) > 0 && in_array($user->role, $limitedRoles)) {
-			$params['user'] = $user->id;
+		if (get_option('limit_visibility_to_own_items_roles') <> '') {
+			$limitedRoles = unserialize(get_option('limit_visibility_to_own_items_roles'));
+			if ($user && count($limitedRoles) > 0 && in_array($user->role, $limitedRoles)) {
+				$params['user'] = $user->id;
+			}
 		}
 		return $params;
 	}
@@ -61,9 +63,11 @@ class LimitVisibilityToOwnPlugin extends Omeka_Plugin_AbstractPlugin
 		if (!is_admin_theme()) return $params;
 		
 		$user = current_user();
-		$limitedRoles = unserialize(get_option('limit_visibility_to_own_collections_roles'));
-		if ($user && count($limitedRoles) > 0 && in_array($user->role, $limitedRoles)) {
-			$params['user'] = $user->id;
+		if (get_option('limit_visibility_to_own_collections_roles') <> '') {
+			$limitedRoles = unserialize(get_option('limit_visibility_to_own_collections_roles'));
+			if ($user && count($limitedRoles) > 0 && in_array($user->role, $limitedRoles)) {
+				$params['user'] = $user->id;
+			}
 		}
 		return $params;
 	}
