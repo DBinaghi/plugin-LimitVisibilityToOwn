@@ -1,4 +1,5 @@
 <?php $view = get_view(); ?>
+
 <div class="field">
 	<div class="two columns alpha">
 		<label><?php echo __('Limit to own Items')?></label>	
@@ -7,7 +8,7 @@
 		<p class="explanation"><?php echo __("Check the roles that will be able to see only their own Items (in Admin mode). <br>N.B.: by default, Super User's role is not available for limitation."); ?></p>
 		<div class="input-block">		
 			<?php
-				if (get_option('limit_visibility_to_own_items_roles') <> '0') {
+				if (get_option('limit_visibility_to_own_items_roles') <> '') {
 					$limitedRoles = unserialize(get_option('limit_visibility_to_own_items_roles'));
 				} else {
 					$limitedRoles = array();
@@ -29,6 +30,7 @@
 		</div>
 	</div>
 </div>
+
 <div class="field">
 	<div class="two columns alpha">
 		<label><?php echo __('Limit to own Collections')?></label>	
@@ -37,7 +39,7 @@
 		<p class="explanation"><?php echo __("Check the roles that will be able to see only their own Collections (in Admin mode). <br>N.B.: by default, Super User's role is not available for limitation."); ?></p>
 		<div class="input-block">		
 			<?php 
-				if (get_option('limit_visibility_to_own_collections_roles') <> '0') {
+				if (get_option('limit_visibility_to_own_collections_roles') <> '') {
 					$limitedRoles = unserialize(get_option('limit_visibility_to_own_collections_roles'));
 				} else {
 					$limitedRoles = array();
