@@ -1,5 +1,8 @@
 # Limit Visibility To Own
 
+## Important: this plugin has been now included in a broader plugin,  <a href="https://github.com/DBinaghi/plugin-AdminTools" target="_blank">Admin Tools</a>, therefore there won't be any more updates/releases of it as a stand-alone plugin. Please refer to Admin Tools' pages for issues and updates.
+
+
 ## Description
 
 Plugin for Omeka Classic. Once installed and activated, allows to limit, while in Admin mode, the visibility of Items and/or Collections
